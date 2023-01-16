@@ -5,7 +5,7 @@ import Box from './Box'
 
 const BoxList = () => {
     const INITIAL_STATE = [
-        {id: uuidv4(), color: 'red', width: 20, height: 30}
+        {id: uuidv4(), color: 'red', width: 20, height: 30, testId:"initialBox"}
     ]
 
     const [boxes, setBoxes] = useState(INITIAL_STATE);
