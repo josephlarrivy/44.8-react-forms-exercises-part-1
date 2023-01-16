@@ -15,7 +15,7 @@ const BoxList = () => {
     }
 
     const removeBox = (id) => {
-        
+        setBoxes(boxes => boxes.filter(box => box.id !== id))
     }
 
 
@@ -25,8 +25,8 @@ const BoxList = () => {
             <NewBoxForm addBox={addBox}/>
             <h3>Your boxes: </h3>
             <div>
-                {boxes.map(({id, color, width, height}) => 
-                <Box id={id} color={color} width={parseInt(width)} height={parseInt(height)} key={id} />
+                {boxes.map(({id, color, width, height, handleClick}) => 
+                <Box id={id} color={color} width={parseInt(width)} height={parseInt(height)} key={id} handleClick={handleClick} removeBox={removeBox}/>
                 )}
             </div>
         </>
